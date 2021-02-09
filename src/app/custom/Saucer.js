@@ -28,13 +28,13 @@ export default class Saucer extends EventEmitter{
     // }
 
     async moveTo(){
-        await gsap.to(this._saucerElement, {x:-835, duration:5, id:'flyIn'});
+        await gsap.to(this._saucerElement, {x:-835, duration:2, id:'flyIn'});
 
         this.emit(Saucer.events.FLY_IN);
     }
 
     async moveAway(){
-        await gsap.to(this._saucerElement,{x: -1800, duration:5, delay:7, id:'flyOut'});
+        gsap.to(this._saucerElement,{x: -1800, duration:2, id:'flyOut'});
 
         this.emit(Saucer.events.FLY_AWAY);
     }
@@ -45,15 +45,15 @@ export default class Saucer extends EventEmitter{
     // }
 
     async BeamShow(){
-        await gsap.to(this._beamTopElement, {opacity:0.6, duration: 2, delay:5, id:'showTopBeam'})
-        await gsap.to(this._beamBottomElement, {opacity:0.6, duration: 2, delay:5, id:'showBottomBeam'})
+        gsap.to(this._beamTopElement, {opacity:0.6, duration: 1, id:'showTopBeam'})
+        await gsap.to(this._beamBottomElement, {opacity:0.6, duration: 1, id:'showBottomBeam'})
 
         this.emit(Saucer.events.BEAM_SHOW);
     }
 
     async BeamHide(){
-        await gsap.to(this._beamTopElement, {opacity:0, duration: 0.5, delay:6.5, id:'hideTopBeam'})
-        await gsap.to(this._beamBottomElement, {opacity:0, duration: 0.5, delay:6.5, id:'hideBottomBeam'})
+        gsap.to(this._beamTopElement, {opacity:0, duration: 0.5, id:'hideTopBeam'})
+        await gsap.to(this._beamBottomElement, {opacity:0, duration: 0.5, id:'hideBottomBeam'})
 
         this.emit(Saucer.events.BEAM_HIDE)
     }
