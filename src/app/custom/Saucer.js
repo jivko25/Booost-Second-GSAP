@@ -28,13 +28,13 @@ export default class Saucer extends EventEmitter{
     // }
 
     async moveTo(){
-        await gsap.to(this._saucerElement, {x:-835, duration:2, id:'flyIn'});
+        await gsap.to(this._saucerElement, {x:-835, duration:2, id:'flyIn', ease:'power1.out'});
 
         this.emit(Saucer.events.FLY_IN);
     }
 
     async moveAway(){
-        await gsap.to(this._saucerElement,{x: -1800, duration:2, id:'flyOut'});
+        await gsap.to(this._saucerElement,{x: -1800, duration:2, id:'flyOut', ease:'power1.in'});
 
         this.emit(Saucer.events.FLY_AWAY);
     }

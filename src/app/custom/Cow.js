@@ -2,8 +2,7 @@ import EventEmitter from 'eventemitter3';
 import gsap from 'gsap/all';
 
 const EVENTS = { 
-    ABDUCT_COMPETED: 'abduct_completed',
-    COW_ABDUCTED: 'cow_abducted'
+    ABDUCT_COMPLETED: 'abduct_completed'
 };
 
 export default class Cow extends EventEmitter{
@@ -20,12 +19,10 @@ export default class Cow extends EventEmitter{
     async moveTo(){
         await gsap.to(this._cowElement, {opacity:1, y:-390, duration: 2, id:'cowAduction'})
 
-        this.emit(Cow.events.ABDUCT_COMPETED);
+        this.emit(Cow.events.ABDUCT_COMPLETED);
     }
 
     async hide(){
         await gsap.to(this._cowElement, {opacity:0, duration: 0 ,id:'cowHide'});
-
-        this.emit(Cow.events.COW_ABDUCTED);
     }
 }
