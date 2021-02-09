@@ -2,12 +2,16 @@ import Saucer from './Saucer';
 import Cow from './Cow';
 
 export default class Animation{
+    constructor(){
+        this.saucer = new Saucer();
+        this.cow = new Cow();
+    }
     start(){
-        const saucer = new Saucer();
-        const cow = new Cow();
-        saucer.moveTo();
-        saucer.moveAway();
-        saucer.toggleBeam();
-        cow.moveTo();
+        this.saucer.moveTo();
+        this.saucer.BeamShow();
+        this.cow.moveTo();
+        this.cow.hide();
+        this.saucer.BeamHide();
+        this.saucer.moveAway();
     }
 }

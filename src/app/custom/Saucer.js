@@ -39,10 +39,10 @@ export default class Saucer extends EventEmitter{
         this.emit(Saucer.events.FLY_AWAY);
     }
 
-    toggleBeam(){
-        this.BeamShow();
-        this.BeamHide();
-    }
+    // toggleBeam(){
+    //     this.BeamShow();
+    //     this.BeamHide();
+    // }
 
     BeamShow(){
         gsap.to(this._beamTopElement, {opacity:0.6, duration: 2, delay:5, id:'showTopBeam'})
