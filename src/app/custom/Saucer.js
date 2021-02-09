@@ -34,7 +34,7 @@ export default class Saucer extends EventEmitter{
     }
 
     async moveAway(){
-        gsap.to(this._saucerElement,{x: -1800, duration:2, id:'flyOut'});
+        await gsap.to(this._saucerElement,{x: -1800, duration:2, id:'flyOut'});
 
         this.emit(Saucer.events.FLY_AWAY);
     }
