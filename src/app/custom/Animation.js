@@ -6,12 +6,12 @@ export default class Animation{
         this.saucer = new Saucer();
         this.cow = new Cow();
     }
-    start(){
-        this.saucer.moveTo();
-        this.saucer.BeamShow();
-        this.cow.moveTo();
-        this.cow.hide();
-        this.saucer.BeamHide();
-        this.saucer.moveAway();
+    async start(){
+        await this.saucer.moveTo();
+        await this.saucer.BeamShow();
+        await this.cow.moveTo();
+        await this.cow.hide();
+        await this.saucer.BeamHide();
+        await this.saucer.moveAway();
     }
 }
