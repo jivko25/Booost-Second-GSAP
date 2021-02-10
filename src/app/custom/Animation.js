@@ -2,8 +2,10 @@ import Saucer from './Saucer';
 import Cow from './Cow';
 import EventEmitter from 'eventemitter3';
 
-export default class Animation{
+export default class Animation extends EventEmitter{
     constructor(){
+        super();
+        
         this.saucer = new Saucer();
         this.cow = new Cow();
     }
