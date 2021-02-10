@@ -45,15 +45,28 @@ export default class Saucer extends EventEmitter{
     // }
 
     async BeamShow(){
+<<<<<<< Updated upstream
         gsap.to(this._beamTopElement, {opacity:0.6, duration: 1, id:'showTopBeam'});
         await gsap.to(this._beamBottomElement, {opacity:0.6, duration: 1, id:'showBottomBeam'});
+=======
+        // await gsap.to(this._beamTopElement, {opacity:0.6, duration: 1, id:'showTopBeam'});
+        // await gsap.to(this._beamBottomElement, {opacity:0.6, duration: 1, id:'showBottomBeam'});
+
+        await gsap.timeline().to(this._beamTopElement, {opacity:0.6, duration: 1, id:'showTopBeam'})
+                    .to(this._beamBottomElement, {opacity:0.6, duration: 1, id:'showBottomBeam'});
+>>>>>>> Stashed changes
 
         this.emit(Saucer.events.BEAM_SHOW);
     }
 
     async BeamHide(){
+<<<<<<< Updated upstream
         gsap.to(this._beamTopElement, {opacity:0, duration: 0.5, id:'hideTopBeam'});
         await gsap.to(this._beamBottomElement, {opacity:0, duration: 0.5, id:'hideBottomBeam'});
+=======
+        await gsap.timeline().to(this._beamTopElement, {opacity:0, duration: 0.5, id:'hideTopBeam'})
+                    .to(this._beamBottomElement, {opacity:0, duration: 0.5, id:'hideBottomBeam'});
+>>>>>>> Stashed changes
 
         this.emit(Saucer.events.BEAM_HIDE)
     }
